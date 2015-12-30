@@ -1,6 +1,7 @@
 package com.hqukai.learning.java;
 
 
+import com.hqukai.learning.java.service.ArrayUtils;
 import com.hqukai.learning.java.service.QucikSort;
 import com.hqukai.learning.java.service.TestService;
 import org.joda.time.LocalTime;
@@ -23,11 +24,11 @@ public class Main {
 
 
         int[] a = {2, 1, 1};
-        QucikSort.soutArray(a);
+        ArrayUtils.soutArray(a);
 
         QucikSort.quickSort(a, 0, a.length - 1);
 
-        QucikSort.soutArray(a);
+        ArrayUtils.soutArray(a);
 
 
     }

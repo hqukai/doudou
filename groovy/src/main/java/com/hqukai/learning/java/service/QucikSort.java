@@ -5,14 +5,6 @@ package com.hqukai.learning.java.service;
  */
 public class QucikSort {
 
-    public static void soutArray(int[] a) {
-        System.out.println();
-
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i]);
-        }
-        System.out.println();
-    }
 
     public static void quickSort(int[] a, int s, int e) {
         if (s >= e) {
@@ -39,15 +31,15 @@ public class QucikSort {
                 break;
             }
 
-            swap(a, i, j);
-            soutArray(a);
+            ArrayUtils.swap(a, i, j);
+            ArrayUtils.soutArray(a);
 
             j--;
         }
         if (a[i] < min) {
-            swap(a, s, i);
+            ArrayUtils.swap(a, s, i);
         }
-        soutArray(a);
+        ArrayUtils.soutArray(a);
 
         quickSort(a, s, i - 1);
         quickSort(a, i + 1, e);
@@ -63,10 +55,27 @@ public class QucikSort {
 
     }
 
-    public static void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+
+    public static void main(String args[]) {
+//        System.out.println("Gradle hello");
+//        LocalTime currentTime = new LocalTime();
+//        System.out.println("now time is:" + currentTime);
+//
+//        TestService testService = new TestService();
+//        testService.test();
+
+
+//        int[] a = {3, 2, 3, 5, 1, 2, 3};
+
+
+
+        int[] a = {2, 1, 1};
+        ArrayUtils.soutArray(a);
+
+        QucikSort.quickSort(a, 0, a.length - 1);
+
+        ArrayUtils.soutArray(a);
+
 
     }
 }
