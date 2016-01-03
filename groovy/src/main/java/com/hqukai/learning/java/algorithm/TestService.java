@@ -1,4 +1,4 @@
-package com.hqukai.learning.java.service;
+package com.hqukai.learning.java.algorithm;
 
 /**
  * Created by hankai on 2015/12/28.

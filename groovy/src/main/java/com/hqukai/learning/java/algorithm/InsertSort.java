@@ -1,4 +1,4 @@
-package com.hqukai.learning.java.service;
+package com.hqukai.learning.java.algorithm;
 
 /**
  * Created by hankai on 2015/12/28.
@@ -7,7 +7,7 @@ public class InsertSort {
 
 
     /**
-     * 快速排序
+     * 插入排序
      *
      * @param a
      */
@@ -28,9 +28,14 @@ public class InsertSort {
 
 
     public static void main(String args[]) {
+
+
         ArrayUtils.soutArray(ArrayUtils.a);
         InsertSort.insertSort(ArrayUtils.a);
         ArrayUtils.soutArray(ArrayUtils.a);
+
+//        (h = key.hashCode()) ^ (h >>> 16)
+
 
     }
 }
