@@ -10,7 +10,7 @@ import java.sql.Statement;
  */
 public class JdbcMain {
 
-    private final static String url = "jdbc:mysql://123.56.64.242:3306/hqukaitest?user=hqukai&password=hqukai&userUnicode=true&characterEncoding=UTF8";
+    private final static String url = "";
 
     private Connection connection = null;
 
