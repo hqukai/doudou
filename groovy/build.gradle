@@ -47,6 +47,8 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
 
     compile "joda-time:joda-time:2.2"
+    compile 'mysql:mysql-connector-java:5.1.6'
+
 
 //    compile fileTree(dir: 'libs', include: '*.jar') //依赖本地的jar包
 
@@ -69,6 +71,6 @@ mainClassName = 'com.hqukai.learning.java.Main'
 //    }
 //}
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
-}
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '2.9'
+//}
