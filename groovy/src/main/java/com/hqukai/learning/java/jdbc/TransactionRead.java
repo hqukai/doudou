@@ -1,13 +1,16 @@
 package com.hqukai.learning.java.jdbc;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/1/11.
  */
-public class Transaction {
+public class TransactionRead {
 
     public static void main(String[] args) throws SQLException {
         JdbcMain jdbcMain = new JdbcMain();
@@ -15,24 +18,23 @@ public class Transaction {
         Connection connection = null;
         try {
             connection = jdbcMain.getConnection();
-            connection.setAutoCommit(false);
 //            connection.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
-            connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
-            System.out.println(connection.getTransactionIsolation());
             Statement s = connection.createStatement();
-
-
-
-//            int x = s.executeUpdate("delete from student");
-//            System.out.println(x);
-            s.executeUpdate("insert into student values(1,'hankai',12)");
-            s.executeUpdate("insert into student values(12,'hankai',12)");
-
-            connection.commit();
+            ResultSet r = s.executeQuery("SELECT * from student");
+//            List<Student> l = new ArrayList<>();
+            Student student = null;
+            while (r.next()) {
+                student = new Student(r.getLong("id"), r.getString("name"), r.getInt("age"));
+//                l.add(student);
+                System.out.println(student);
+            }
+//            System.out.println(l.toString());
         } catch (SQLException e) {
             e.printStackTrace();
-            connection.rollback();
+//            connection.rollback();
 //            connection.commit();
+        } finally {
+            connection.close();
         }
     }
 
