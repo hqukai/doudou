@@ -19,3 +19,12 @@ ALTER system kill session '52, 11825';
 --添加字段
 alter table pp_order add(remark varchar(200));
 COMMENT ON COLUMN PP_ORDER.remark IS '自定义保留域';
+
+
+-- 删除表  序列
+select 'drop table '||table_name||';'
+from cat
+where table_type='TABLE' ;
+
+-- 删除表  序列
+select 'drop sequence ' || sequence_name||';'||chr(13)||chr(10) from user_sequences;
