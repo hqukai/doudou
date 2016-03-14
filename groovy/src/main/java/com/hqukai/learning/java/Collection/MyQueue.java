@@ -32,6 +32,10 @@ public class MyQueue {
         s = queue.element();  //  返回对头元素，如果为空，则抛出异常
 
 
+
+//        Thread
+
+
     }
 
 }
