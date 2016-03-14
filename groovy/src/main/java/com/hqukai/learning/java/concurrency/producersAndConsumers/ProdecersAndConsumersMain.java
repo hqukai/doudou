@@ -24,17 +24,17 @@ public class ProdecersAndConsumersMain {
 
         Thread consumerThread = new Thread(() -> {
             while (true) {
-//                try {
-//                    Product p = queue.take();
-                Product p = queue.remove();
+                try {
+                    Product p = queue.take();
+//                Product p = queue.remove();
 //                Product p = queue.poll();
                 if (null != p) {
                     p.doSomething();
                 }
                 System.out.println("队列长度：" + queue.size());
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         productThread.start();
