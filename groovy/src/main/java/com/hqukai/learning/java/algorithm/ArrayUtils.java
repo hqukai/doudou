@@ -17,11 +17,18 @@ public class ArrayUtils {
     }
 
 
-
     public static void swap(int[] a, int i, int j) {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
+
+    }
+
+    public final static void main(String[] args) {
+
+        String a = "1";
+        String b = "2";
+        System.out.println(b = a);
 
     }
 }
